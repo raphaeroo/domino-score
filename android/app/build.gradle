@@ -149,9 +149,9 @@ android {
         release {
             if (project.hasProperty('MYAPP_RELEASE_STORE_FILE')) {
                 storeFile file(MYAPP_RELEASE_STORE_FILE)
-                storePassword 'Eutinhafome10!'
-                keyAlias 'dominoscore_key_alias'
-                keyPassword 'Eutinhafome10!'
+                storePassword System.getProperty("APPCENTER_KEYSTORE_PASSWORD")
+                keyAlias System.getProperty("APPCENTER_KEY_ALIAS")
+                keyPassword System.getProperty("APPCENTER_KEY_PASSWORD")
             }
         }
         debug {
