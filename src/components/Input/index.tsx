@@ -1,15 +1,30 @@
 import React from 'react'
-import { View, TextInput, TextInputProps } from 'react-native'
+import { View, TextInput } from 'react-native'
+import { Controller } from 'react-hook-form'
+import type { Control } from 'react-hook-form'
+import type { TextInputProps } from 'react-native'
 
 import styles from './styles'
 
-export const Input = ({ value, onChangeText, placeholder }: TextInputProps) => {
+interface InputProps extends TextInputProps {
+  control: Control
+  fieldName: string
+}
+
+export const Input = ({ fieldName, placeholder, control }: InputProps) => {
   return (
     <View style={styles.container}>
-      <TextInput
-        value={value}
-        onChangeText={onChangeText}
-        placeholder={placeholder}
+      <Controller
+        control={control}
+        render={({ field: { onChange, onBlur, value } }) => (
+          <TextInput
+            value={value}
+            onBlur={onBlur}
+            onChangeText={onChange}
+            placeholder={placeholder}
+          />
+        )}
+        name={fieldName}
       />
     </View>
   )

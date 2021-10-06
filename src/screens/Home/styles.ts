@@ -45,5 +45,28 @@ export default StyleSheet.create({
     fontSize: 20,
     color: 'white',
     fontWeight: 'bold'
+  },
+  versusIconContainer: {
+    paddingTop: 50
+  },
+  bottomButtonsContainer: {
+    width: '100%',
+    paddingHorizontal: 25,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  },
+  errorNotification: {
+    position: 'absolute',
+    top: 30,
+    right: 0,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    backgroundColor: 'red'
+  },
+  errorMessage: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold'
   }
 })

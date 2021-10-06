@@ -2,7 +2,7 @@ import React from 'react'
 import { NavigationContainer, createNavigationContainerRef } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-import { HomeScreen } from '~/screens'
+import { HomeScreen, GameScreen } from '~/screens'
 import { RouteNames } from './constants'
 
 const { Screen, Navigator } = createNativeStackNavigator()
@@ -14,6 +14,7 @@ export const Router = () => {
     <NavigationContainer ref={NavigationRef}>
       <Navigator screenOptions={{ headerShown: false }}>
         <Screen name={RouteNames.Home} component={HomeScreen} />
+        <Screen name={RouteNames.Game} component={GameScreen} />
       </Navigator>
     </NavigationContainer>
   )

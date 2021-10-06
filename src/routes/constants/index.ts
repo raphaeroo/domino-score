@@ -1,3 +1,4 @@
 export enum RouteNames {
-  Home = 'HomeScreen'
+  Home = 'HomeScreen',
+  Game = 'GameScreen'
 }
