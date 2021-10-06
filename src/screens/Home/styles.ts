@@ -38,7 +38,7 @@ export default StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 8,
     alignSelf: 'center',
-    backgroundColor: 'red',
+    backgroundColor: '#8c0000',
     borderRadius: 10,
     height: 50,
     alignItems: 'center',
@@ -66,7 +66,7 @@ export default StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 10,
     paddingVertical: 7,
-    backgroundColor: 'red'
+    backgroundColor: '#8c0000'
   },
   errorMessage: {
     color: 'white',

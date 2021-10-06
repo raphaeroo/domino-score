@@ -10,6 +10,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context'
 import LinearGradient from 'react-native-linear-gradient'
 import { X, Clock, Info } from 'react-native-feather'
+import { useStore } from '~/state/RootStore'
 import { useForm } from 'react-hook-form'
 
 import { Input } from '~/components'
@@ -28,6 +29,7 @@ export const HomeScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(false)
   const [error, showError] = useState(false)
   const { control, handleSubmit, reset } = useForm()
+  const { gameStore: { startGame } } = useStore()
 
   const translateY = useRef(new Animated.Value(0)).current
 
@@ -47,7 +49,7 @@ export const HomeScreen = ({ navigation }) => {
       }
 
       navigation.navigate(RouteNames.Game)
-      console.log('TIMES', teams) // TODO: enviar para o mobx
+      startGame(teams)
     }
     showError(true)
   }
@@ -108,7 +110,7 @@ export const HomeScreen = ({ navigation }) => {
           </View>
         </View>
         <View style={styles.bottomButtonsContainer}>
-          <TouchableOpacity onPress={() => reset([])}>
+          <TouchableOpacity onPress={() => navigation.navigate(RouteNames.Historic)}>
             <Clock color="white" width={30} height={30} />
           </TouchableOpacity>
           <TouchableOpacity style={styles.button} disabled={loading} onPress={handleSubmit(onSubmit)}>
@@ -118,9 +120,9 @@ export const HomeScreen = ({ navigation }) => {
                 : <Text style={styles.buttonLabel}>Começar partida</Text>
             }
           </TouchableOpacity>
-          <View>
+          <TouchableOpacity>
             <Info color="white" width={30} height={30} />
-          </View>
+          </TouchableOpacity>
         </View>
       </LinearGradient>
       <Animated.View style={[styles.errorNotification, { transform: [{ translateY }] }]}>

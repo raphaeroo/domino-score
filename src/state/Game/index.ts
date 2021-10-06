@@ -3,7 +3,7 @@ import { observable, action, computed, makeObservable, runInAction } from 'mobx'
 import { storeObject, getObject } from '../../services/storage'
 import { RootStore } from '../RootStore'
 
-enum GameStorageKey {
+export enum GameStorageKey {
   value = '@dominoScore/PERSISTED_RESULTS'
 }
 
@@ -22,7 +22,7 @@ type Teams = {
   teamTwo: Team
 }
 
-type Results = {
+export type Results = {
   gameDay: string,
   scoreTeamOne: number,
   scoreTeamTwo: number,
@@ -56,18 +56,18 @@ export class GameStore {
     const dd = String(today.getDate()).padStart(2, '0')
     const mm = String(today.getMonth() + 1).padStart(2, '0')
     const yyyy = today.getFullYear()
-
     const dayOfGame = dd + '/' + mm + '/' + yyyy
 
     runInAction(() => {
       this.gameDate = dayOfGame
-      this.teamOne = teams.teamOne
-      this.teamTwo = teams.teamTwo
+      this.teamOne = { p1: teams.teamOne.p1, p2: teams.teamOne.p2 }
+      this.teamTwo = { p1: teams.teamTwo.p1, p2: teams.teamTwo.p2 }
     })
   }
 
   endGame = async (results: GameScore) => {
     const allResults = await getObject(GameStorageKey.value)
+
     const newResults: Results = {
       gameDay: this.gameDate,
       scoreTeamOne: results.t1,
