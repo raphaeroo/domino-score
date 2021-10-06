@@ -28,7 +28,7 @@ type DataForm = {
 export const HomeScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(false)
   const [error, showError] = useState(false)
-  const { control, handleSubmit, reset } = useForm()
+  const { control, handleSubmit } = useForm()
   const { gameStore: { startGame } } = useStore()
 
   const translateY = useRef(new Animated.Value(0)).current
@@ -120,7 +120,7 @@ export const HomeScreen = ({ navigation }) => {
                 : <Text style={styles.buttonLabel}>Começar partida</Text>
             }
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate(RouteNames.Rules)}>
             <Info color="white" width={30} height={30} />
           </TouchableOpacity>
         </View>
