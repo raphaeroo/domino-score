@@ -33,7 +33,7 @@ export const GameScreen = ({ navigation }) => {
           <Text style={styles.textScore}>{String(scoreTeamOne)}</Text>
           <TouchableOpacity
             onPress={() => setScoreTeamOne((prev) => (prev >= 1 ? prev - 1 : prev))}>
-            <MinusSquare color="white" width={30} height={30} />
+            <MinusSquare color="white" width={45} height={45} />
           </TouchableOpacity>
         </Pressable>
         <Pressable
@@ -42,7 +42,7 @@ export const GameScreen = ({ navigation }) => {
           <Text style={styles.textScore}>{String(scoreTeamTwo)}</Text>
           <TouchableOpacity
             onPress={() => setScoreTeamTwo((prev) => (prev >= 1 ? prev - 1 : prev))}>
-            <MinusSquare color="white" width={30} height={30} />
+            <MinusSquare color="white" width={45} height={45} />
           </TouchableOpacity>
         </Pressable>
         <TouchableOpacity

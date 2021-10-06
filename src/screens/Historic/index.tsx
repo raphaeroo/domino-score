@@ -71,7 +71,7 @@ export const HistoricScreen = ({ navigation }) => {
         renderItem={({ item }) => (
           <View key={item.gameDay} style={styles.itemContainer}>
             <View>
-              <Text>{item.gameDay}</Text>
+              <Text style={styles.gameDayLabel}>{item.gameDay}</Text>
             </View>
             <View style={styles.scoreContainer}>
               <View style={styles.playerOneContainer}>

@@ -28,7 +28,7 @@ export default StyleSheet.create({
   },
   playerScore: {
     color: 'black',
-    fontSize: 25,
+    fontSize: 35,
     fontWeight: 'bold'
   },
   playerOneContainer: {
@@ -55,5 +55,8 @@ export default StyleSheet.create({
     fontSize: 25,
     color: 'white',
     textAlign: 'center'
+  },
+  gameDayLabel: {
+    color: '#999'
   }
 })

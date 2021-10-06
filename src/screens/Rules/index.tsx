@@ -25,6 +25,7 @@ export const RulesScreen = ({ navigation }) => {
         showsVerticalScrollIndicator={false}
       >
         <RenderHtml
+          baseStyle={{ color: 'black' }}
           contentWidth={width}
           source={rules}
         />

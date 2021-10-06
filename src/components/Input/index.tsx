@@ -20,6 +20,8 @@ export const Input = ({ fieldName, placeholder, control }: InputProps) => {
           <TextInput
             value={value}
             onBlur={onBlur}
+            placeholderTextColor="#bbb"
+            style={{ color: 'black' }}
             onChangeText={onChange}
             placeholder={placeholder}
           />

@@ -1,13 +1,16 @@
 {
   "name": "dominoscore",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "create-patch": "yarn version --patch && fastlane android bump && fastlane ios bump",
+    "create-minor": "yarn version --minor && fastlane android bump && fastlane ios bump",
+    "create-major": "yarn version --major && fastlane android bump && fastlane ios bump"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.9",
