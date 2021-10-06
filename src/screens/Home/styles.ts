@@ -39,7 +39,10 @@ export default StyleSheet.create({
     paddingVertical: 8,
     alignSelf: 'center',
     backgroundColor: 'red',
-    borderRadius: 10
+    borderRadius: 10,
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   buttonLabel: {
     fontSize: 20,
@@ -59,9 +62,10 @@ export default StyleSheet.create({
   errorNotification: {
     position: 'absolute',
     top: 30,
-    right: 0,
+    alignSelf: 'center',
     paddingHorizontal: 10,
-    paddingVertical: 5,
+    borderRadius: 10,
+    paddingVertical: 7,
     backgroundColor: 'red'
   },
   errorMessage: {

@@ -29,7 +29,7 @@ export const HomeScreen = ({ navigation }) => {
   const [error, showError] = useState(false)
   const { control, handleSubmit, reset } = useForm()
 
-  const translateX = useRef(new Animated.Value(0)).current
+  const translateY = useRef(new Animated.Value(0)).current
 
   function onSubmit(data: DataForm) {
     setLoading(true)
@@ -54,13 +54,13 @@ export const HomeScreen = ({ navigation }) => {
 
   useEffect(() => {
     if (error) {
-      Animated.spring(translateX, {
+      Animated.spring(translateY, {
         toValue: 0,
         useNativeDriver: true
       }).start()
     } else {
-      Animated.spring(translateX, {
-        toValue: 700,
+      Animated.spring(translateY, {
+        toValue: -150,
         useNativeDriver: true
       }).start()
     }
@@ -69,7 +69,7 @@ export const HomeScreen = ({ navigation }) => {
       showError(false)
       setLoading(false)
     }, 5500)
-  }, [error, translateX])
+  }, [error, translateY])
 
   return (
     <SafeAreaView style={styles.container} edges={['top']}>
@@ -123,12 +123,12 @@ export const HomeScreen = ({ navigation }) => {
           </View>
         </View>
       </LinearGradient>
-      <Animated.View style={[styles.errorNotification, { transform: [{ translateX }] }]}>
+      <Animated.View style={[styles.errorNotification, { transform: [{ translateY }] }]}>
         <Text style={styles.errorMessage}>
           Todos os jogadores precisam estar preenchidos
         </Text>
       </Animated.View>
-      <StatusBar backgroundColor="#4c669f" />
+      <StatusBar backgroundColor="#4c669f" translucent />
     </SafeAreaView>
   )
 }
