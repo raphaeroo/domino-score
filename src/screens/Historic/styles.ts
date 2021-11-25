@@ -1,21 +1,22 @@
 import { StyleSheet } from 'react-native'
+import { fontScale, normalize } from '~/utils'
 
 export default StyleSheet.create({
   main: {
     flex: 1,
-    padding: 40
+    padding: normalize(40)
   },
   backButton: {
-    marginBottom: 30
+    marginBottom: normalize(30)
   },
   itemContainer: {
     elevation: 6,
     width: '100%',
     backgroundColor: 'white',
-    borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    marginBottom: 20
+    borderRadius: normalize(10),
+    paddingVertical: normalize(10),
+    paddingHorizontal: normalize(20),
+    marginBottom: normalize(20)
   },
   scoreContainer: {
     flexDirection: 'row',
@@ -24,11 +25,11 @@ export default StyleSheet.create({
   },
   players: {
     color: 'black',
-    fontSize: 25
+    fontSize: fontScale(25)
   },
   playerScore: {
     color: 'black',
-    fontSize: 35,
+    fontSize: fontScale(35),
     fontWeight: 'bold'
   },
   playerOneContainer: {
@@ -39,20 +40,20 @@ export default StyleSheet.create({
     alignItems: 'flex-end'
   },
   teamOneScoreContainer: {
-    width: 80,
+    width: normalize(80),
     alignItems: 'flex-end',
-    paddingRight: 10
+    paddingRight: normalize(10)
   },
   teamTwoScoreContainer: {
-    width: 80,
-    paddingLeft: 10
+    width: normalize(80),
+    paddingLeft: normalize(10)
   },
   versusContainer: {
-    width: 80,
+    width: normalize(80),
     alignItems: 'center'
   },
   noMatchLabel: {
-    fontSize: 25,
+    fontSize: fontScale(25),
     color: 'white',
     textAlign: 'center'
   },

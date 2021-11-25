@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native'
+import { fontScale, normalize } from '~/utils'
 
 const { width } = Dimensions.get('window')
 
@@ -21,7 +22,7 @@ export default StyleSheet.create({
     alignItems: 'center'
   },
   textScore: {
-    fontSize: 200,
+    fontSize: fontScale(200),
     fontWeight: 'bold',
     color: 'white'
   },
@@ -29,18 +30,17 @@ export default StyleSheet.create({
     position: 'absolute',
     backgroundColor: '#dae2f6',
     elevation: 4,
-    width: 80,
-    paddingVertical: 4,
-    height: 80,
-    borderRadius: 40,
+    paddingVertical: normalize(20),
+    paddingHorizontal: normalize(30),
+    borderRadius: normalize(90),
     alignItems: 'center',
     justifyContent: 'center',
-    bottom: 30,
-    left: width / 3 + 118
+    bottom: normalize(30),
+    marginLeft: width - normalize(width - 65)
   },
   endGameButtonLabel: {
     fontWeight: 'bold',
-    fontSize: 15,
+    fontSize: fontScale(15),
     textAlign: 'center',
     color: '#192f6a'
   }

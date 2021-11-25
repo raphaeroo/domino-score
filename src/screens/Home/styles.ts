@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { fontScale, normalize } from '~/utils'
 
 export default StyleSheet.create({
   container: {
@@ -7,70 +8,70 @@ export default StyleSheet.create({
   main: {
     flex: 1,
     justifyContent: 'space-between',
-    paddingBottom: 40
+    paddingBottom: normalize(40)
   },
   content: {
-    padding: 40,
+    padding: normalize(40),
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center'
   },
   leftContainer: {
     flex: 1,
-    paddingRight: 15,
+    paddingRight: normalize(15),
     alignItems: 'center'
   },
   rightContainer: {
     flex: 1,
-    paddingLeft: 15,
+    paddingLeft: normalize(15),
     alignItems: 'center'
   },
   title: {
-    marginBottom: 25,
+    marginBottom: normalize(25),
     color: 'white',
-    fontSize: 24,
+    fontSize: fontScale(24),
     fontWeight: 'bold'
   },
   inputSeparator: {
-    marginVertical: 10
+    marginVertical: normalize(10)
   },
   button: {
-    paddingHorizontal: 20,
-    paddingVertical: 8,
+    paddingHorizontal: normalize(20),
+    paddingVertical: normalize(8),
     alignSelf: 'center',
     backgroundColor: '#8c0000',
-    borderRadius: 10,
-    height: 50,
+    borderRadius: normalize(10),
+    height: normalize(50),
     alignItems: 'center',
     justifyContent: 'center'
   },
   buttonLabel: {
-    fontSize: 20,
+    fontSize: normalize(20),
     color: 'white',
     fontWeight: 'bold'
   },
   versusIconContainer: {
-    paddingTop: 50
+    paddingTop: normalize(50)
   },
   bottomButtonsContainer: {
     width: '100%',
-    paddingHorizontal: 25,
+    paddingHorizontal: normalize(25),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between'
   },
   errorNotification: {
     position: 'absolute',
-    top: 30,
+    top: normalize(30),
     alignSelf: 'center',
-    paddingHorizontal: 10,
-    borderRadius: 10,
-    paddingVertical: 7,
+    paddingHorizontal: normalize(10),
+    borderRadius: normalize(10),
+    paddingVertical: normalize(7),
     backgroundColor: '#8c0000'
   },
   errorMessage: {
     color: 'white',
-    fontSize: 16,
+    fontSize: fontScale(16),
     fontWeight: 'bold'
   }
 })
